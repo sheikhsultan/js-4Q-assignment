@@ -26,13 +26,32 @@ console.log('Bill Gates money in length', mileResult2, 'miles' );
 
 /** wood-calculation,
  *  how much cubic woods needed for chair, table, and bed. 
+ * for each chair we will need 1 cubic woods
+ * for each 3 cubics
+ * for each bed 7 cubics
  */
-function woodCalculator(chair, table, bed) {
-
-    
+function woodCalculator(chairs, tables, beds) {
+    var cubic = 0;
+        if(chairs > 0 || tables > 0 || beds > 0){
+            var chair = chairs * 1;
+            var table = tables * 3;
+            var bed = beds * 7 ; // I took 7 cubics for bed
+            var cubics = chair + table + bed;
+            return cubics;
+        }
+        else{
+            return "input can not be 0 or less than 0";
+        }
 }
 
-console.log();
+var woodresult = woodCalculator(2, 5, 0);
+console.log(woodresult);
+var woodresult2 = woodCalculator(25, 5, 7);
+console.log(woodresult2);
+var woodresult3 = woodCalculator(2, 0, 9);
+console.log(woodresult3);
+var woodresult4 = woodCalculator(36, 2, 3);
+console.log(woodresult4);
 
 
 
@@ -91,7 +110,7 @@ console.log(totalBricks6);
 
 
 
-/** */
+
 function tinyFriend(arr){
     var min = arr[0];
     for(var i = 1; i < arr.length; i++){
@@ -106,5 +125,4 @@ const tinyFriendResult = tinyFriend(["radoyan", "ajmir", "putin", "kimJong-un" ]
 console.log(tinyFriendResult);
 console.log(tinyFriend(["redu", "ali", "masudRana", "shamimUsman", "fahimKhan", "hoshenChairman", "mithu" ]));
 console.log(tinyFriend(["bond", "jamesBond", "kkModi", "heroAlom" ]));
-// sorry for those name. i don't have many friends so i had to made up names.
 
